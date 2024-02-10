@@ -1,0 +1,27 @@
+@model IEnumerable<string>
+@{
+    ViewData["Title"] = "List of images";
+}
+
+<div class="list-container">
+    <div class="child-container">
+        <h4 class="display-4">Lista obrazów:</h4>
+        @foreach (var imageUrl in Model)
+        {
+            <div style="margin: 20px">
+                <img src="@imageUrl" alt="Image" />
+                <br/>
+                    @imageUrl.Substring(imageUrl.LastIndexOf("/") + 1)
+                    <form asp-action="RemoveImage" method="post">
+                        <input type="hidden" name="imageName" value="@imageUrl.Substring(imageUrl.LastIndexOf("/") + 1)" />
+                        <button type="submit">Usuñ obraz</button>
+                    </form>
+            </div>
+        }
+    </div>
+    <div class="child-container">
+        <div class="upload-container">
+            <partial name="UploadImage" for="@Model" />
+        </div>
+    </div>
+</div>

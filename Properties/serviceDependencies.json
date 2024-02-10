@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": null
+    },
+    "cosmosdb1": {
+      "type": "cosmosdb",
+      "connectionId": "ConnectionStrings:cosmosdb-logs"
+    },
+    "storage1": {
+      "type": "storage",
+      "connectionId": "storage-connection"
+    },
+    "storage2": {
+      "type": "storage",
+      "connectionId": "BlobService:ConnectionString"
+    },
+    "identityapp1": {
+      "type": "identityapp",
+      "connectionId": "AzureAD:ClientSecret"
+    }
+  }
+}
